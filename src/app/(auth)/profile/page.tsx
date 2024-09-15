@@ -1,6 +1,6 @@
 "use client";
 
-import { useAuth } from "@/context/AuthContext";
+import { useAuth } from "@/context/auth-context";
 import Image from "next/image";
 import React from "react";
 

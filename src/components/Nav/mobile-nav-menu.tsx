@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from 'next/link';
 import { ModeToggleButton } from './mode-toggle';
-import { useAuth } from '@/context/AuthContext';
+import { useAuth } from '@/context/auth-context';
 
 export default function MobileNavMenu() {
   const { user, logout } = useAuth();

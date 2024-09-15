@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/providers/theme-provider";
 import Navbar from "../components/Nav/navbar";
 import Footer from "../components/Footer/footer";
-import { AuthProvider } from "@/context/AuthContext";
+import { AuthProvider } from "@/context/auth-context";
+import { ThemeProvider } from "@/context/theme-context";
 
 const siliguri = Hind_Siliguri({
 	subsets: ["bengali"],

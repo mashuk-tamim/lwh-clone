@@ -6,7 +6,7 @@ import logo from "@/assets/svgs/logo.svg";
 import { ModeToggleButton } from "./mode-toggle";
 import MobileNavMenu from "./mobile-nav-menu";
 import NavLinks from "./nav-links";
-import { useAuth } from "@/context/AuthContext";
+import { useAuth } from "@/context/auth-context";
 
 
 import {
@@ -26,7 +26,7 @@ import { UserRound } from "lucide-react";
 export default function Navbar() {
   const { user, logout } = useAuth();
 	return (
-		<nav className="w-screen h-[50px] md:h-[60px] px-5 md:px-10 backdrop-blur-2xl fixed top-0 z-999 border flex items-center">
+		<nav className="w-screen h-[50px] md:h-[60px] px-5 md:px-10 backdrop-blur-2xl fixed top-0 z-999 flex items-center">
 			<div className="w-full max-w-7xl mx-auto flex justify-between items-center">
 				<Link href="/" legacyBehavior>
 					<div className="flex items-center h-full cursor-pointer">

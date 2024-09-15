@@ -34,3 +34,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Upcoming Features
+
+This project is continuously evolving. Below are some of the planned improvements and features that will be implemented in future updates:
+
+- **Refresh Token Implementation**: Adding functionality to handle token refresh for secure session management.
+- **Fetching User Data on Fast Reloads**: Ensuring that user data is properly fetched even when the page reloads quickly.
+- **Preventing Layout Shifts**: Avoiding layout shifts due to slow user data fetching, improving the user experience.
+- **JWT Access Token**: Implementing access token management using JSON Web Tokens (JWT) for authentication.
+- **Cookie Management**: Using cookies to store authentication tokens for improved security and session persistence.
+- **Efficient User Type Inference**: Improving the handling of user type definitions to avoid using `any` and enforce type safety throughout the codebase.
+
+Stay tuned for updates as these features are integrated!
+

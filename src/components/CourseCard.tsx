@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import React from "react";
 import { Button } from "./ui/button";
 import {
@@ -9,13 +9,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-
-interface CourseCardProps {
-	title: string;
-	description: string;
-	imgURL: string | StaticImageData;
-	isPaid: boolean;
-}
+import { CourseCardProps } from "@/types/course-card";
 
 export default function CourseCard({ title, description, imgURL, isPaid }: CourseCardProps) {
 	return (

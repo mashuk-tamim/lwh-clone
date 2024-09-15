@@ -10,7 +10,7 @@ import { getUser } from "@/api/requests";
 import { useRouter } from "next/navigation";
 
 interface AuthContextType {
-	user: any; // Replace `any` with your user type
+	user: any;
 	setUser: React.Dispatch<React.SetStateAction<any>>;
 	logout: () => void;
 }

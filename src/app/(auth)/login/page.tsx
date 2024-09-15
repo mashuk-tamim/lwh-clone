@@ -19,7 +19,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { getUser, login } from "@/api/requests";
 import { loginSchema } from "@/validation/login.schema";
-import { useAuth } from "@/context/AuthContext";
+import { useAuth } from "@/context/auth-context";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
