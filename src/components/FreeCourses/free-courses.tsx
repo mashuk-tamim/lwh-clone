@@ -15,13 +15,13 @@ export default function FreeCourses() {
 			title="নিজেকে ঝালিয়ে নাও, আরো একবার, ফ্রি তে 🏃‍♂️"
 		>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-5">
-				{courses.map((course, idx) => (
+        {courses.map((course, idx) => (
 					<CourseCard
 						key={idx}
-						imgURL={course.imgURL}
-						title={course.title}
-						description={course.description}
-						isPaid={course.isPaid}
+						title = {course.title}
+						description = {course.description}
+						imgURL = {course.imgURL}
+						isPaid = {course.isPaid}
 					/>
 				))}
 			</div>
@@ -39,7 +39,7 @@ const courses = [
 	},
 	{
 		imgURL: chemistry2,
-		title: "রসায়ন ১ম পত্র",
+		title: "রসায়ন 2ম পত্র",
 		description:
 			"শুরু থেকে শেষ পর্যন্ত সব জটিল ও কঠিন টপিক্স পরিষ্কার হয়ে যাবে, যদি তুমি পুরোটা শেষ করতে পারো।n",
 		isPaid: false,

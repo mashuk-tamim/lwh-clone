@@ -1,7 +1,6 @@
 import React from 'react'
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
-
+import { Menu, UserRound } from "lucide-react";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -15,13 +14,14 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Link from 'next/link';
-import LoginSignUpButton from './login-signup-button';
 import { ModeToggleButton } from './mode-toggle';
+import { useAuth } from '@/context/AuthContext';
 
 export default function MobileNavMenu() {
+  const { user, logout } = useAuth();
   return (
-    <div className="flex gap-2 md:hidden">
-      <ModeToggleButton/>
+		<div className="flex gap-2 md:hidden">
+			<ModeToggleButton />
 			<DropdownMenu>
 				<DropdownMenuTrigger asChild>
 					<Button variant="outline" size="icon">
@@ -66,7 +66,26 @@ export default function MobileNavMenu() {
 					</DropdownMenuItem>
 					<DropdownMenuSeparator />
 					<DropdownMenuLabel>
-						<LoginSignUpButton justifyBetween={true} />
+						{user ? (
+							<div className="flex items-center justify-between">
+								<Link href="/profile">
+									<Button variant="outline" className="flex gap-2 text-xs">
+										<UserRound className="h-4 w-4" />
+										Profile
+									</Button>
+                </Link>
+                <Button onClick={logout}>
+                  Logout
+                </Button>
+							</div>
+						) : (
+							<Link href="/login">
+								<Button variant="outline" className="flex gap-2 text-xs">
+									<UserRound className="h-4 w-4" />
+									লগইন
+								</Button>
+							</Link>
+						)}
 					</DropdownMenuLabel>
 				</DropdownMenuContent>
 			</DropdownMenu>

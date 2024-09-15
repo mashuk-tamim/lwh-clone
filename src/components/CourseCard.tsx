@@ -17,12 +17,7 @@ interface CourseCardProps {
 	isPaid: boolean;
 }
 
-export default function CourseCard({
-	title,
-	description,
-	imgURL,
-	isPaid,
-}: CourseCardProps) {
+export default function CourseCard({ title, description, imgURL, isPaid }: CourseCardProps) {
 	return (
 		<div className="max-w-[400px] md:max-w-[320px] lg:max-w-[400px]">
 			<Card>
