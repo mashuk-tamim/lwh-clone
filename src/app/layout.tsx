@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Hind_Siliguri } from "next/font/google";
+import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/providers/theme-provider";
-import Navbar from "./_components/Nav/navbar";
-import Footer from "./_components/Footer/footer";
+import Navbar from "../components/Nav/navbar";
+import Footer from "../components/Footer/footer";
+import { ThemeProvider } from "@/context/theme-context";
+import { AuthProvider } from "@/context/auth-context";
 
-const inter = Inter({ subsets: ["latin"] });
 const siliguri = Hind_Siliguri({
 	subsets: ["bengali"],
 	weight: ["300", "400", "500", "600", "700"],
@@ -30,9 +30,11 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<Navbar />
-					{children}
-					<Footer />
+					<AuthProvider>
+						<Navbar />
+						{children}
+						<Footer />
+					</AuthProvider>
 				</ThemeProvider>
 			</body>
 		</html>

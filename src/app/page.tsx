@@ -1,13 +1,11 @@
-import Image from "next/image";
-import Hero from "./_components/Hero/hero";
-import PaidCourses from "./_components/PaidCourses/paid-courses";
-import WhyUs from "./_components/WhyUs/why-us";
-import FreeCourses from "./_components/FreeCourses/free-courses";
-import Testimonial from "./_components/Testimonial/testimonial";
-import Team from "./_components/Team/team";
-import SSC from "./_components/SSC/ssc";
-import ContactUs from "./_components/ContactUs/contact-us";
-import Footer from "./_components/Footer/footer";
+import Hero from "../components/Hero/hero";
+import PaidCourses from "../components/PaidCourses/paid-courses";
+import WhyUs from "../components/WhyUs/why-us";
+import FreeCourses from "../components/FreeCourses/free-courses";
+import Testimonial from "../components/Testimonial/testimonial";
+import Team from "../components/Team/team";
+import SSC from "../components/SSC/ssc";
+import ContactUs from "../components/ContactUs/contact-us";
 
 export default function Home() {
 	return (
