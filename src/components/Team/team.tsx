@@ -1,4 +1,4 @@
-import Section from "@/components/Section";
+import Section from "@/components/shared/Section";
 import Image from "next/image";
 import React from "react";
 import hemel from "@/assets/images/teams/head.png";

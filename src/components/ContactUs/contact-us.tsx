@@ -1,4 +1,4 @@
-import GeneralSection from '@/components/GeneralSection'
+import GeneralSection from '@/components/shared/GeneralSection'
 import React from 'react'
 
 export default function ContactUs() {

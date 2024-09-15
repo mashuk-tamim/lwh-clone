@@ -1,16 +1,15 @@
-"use client"
-import React, {
+"use client";
+import { useRouter } from "next/navigation";
+import {
 	createContext,
-	useState,
+	ReactNode,
 	useContext,
 	useEffect,
-	ReactNode,
+	useState,
 } from "react";
-import { getUser } from "@/api/requests";
-import { useRouter } from "next/navigation";
 
 interface AuthContextType {
-	user: any;
+	user: any; // Replace `any` with your user type
 	setUser: React.Dispatch<React.SetStateAction<any>>;
 	logout: () => void;
 }
@@ -20,46 +19,35 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 	children,
 }) => {
-  const [user, setUser] = useState<any>(null);
-  const { push } = useRouter();
+	const [user, setUser] = useState(null);
+	const { push } = useRouter();
 
-  useEffect(() => {
+	useEffect(() => {
 		const fetchUser = async () => {
-			const accessToken = localStorage.getItem("accessToken");
-			if (accessToken) {
-				try {
-					const response = await getUser(accessToken);
-					setUser(response.data);
-				} catch (error) {
-          console.error("Error fetching user data", error);
-          localStorage.removeItem("accessToken");
-          setUser(null);
-				}
+			const user = localStorage.getItem("user");
+			if (user) {
+				setUser(JSON.parse(user));
 			}
 		};
-
 		fetchUser();
-  }, []);
-  
-  const logout = () => {
-		localStorage.removeItem("accessToken");
-		localStorage.removeItem("refreshToken");
+	}, [setUser]);
+	const logout = () => {
+		localStorage.removeItem("user");
 		setUser(null);
-    push("/login");
+		push("/login");
 	};
 
 	return (
-		<AuthContext.Provider
-			value={{ user, setUser, logout}}
-		>
+		<AuthContext.Provider value={{ user, setUser, logout }}>
 			{children}
 		</AuthContext.Provider>
 	);
 };
 
+// Custom hook for accessing the AuthContext
 export const useAuth = () => {
 	const context = useContext(AuthContext);
-	if (context === undefined) {
+	if (!context) {
 		throw new Error("useAuth must be used within an AuthProvider");
 	}
 	return context;

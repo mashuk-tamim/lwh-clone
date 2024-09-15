@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { Label } from "@/components/ui/label";
+import React, { useEffect } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -23,13 +22,13 @@ import { useAuth } from "@/context/auth-context";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
-  const { setUser } = useAuth();
-  const { push } = useRouter();
+	const { setUser } = useAuth();
+	const { push } = useRouter();
 	const form = useForm<z.infer<typeof loginSchema>>({
 		resolver: zodResolver(loginSchema),
-  });
-  
-  useEffect(() => {
+	});
+
+	useEffect(() => {
 		const fetchUser = async () => {
 			const accessToken = localStorage.getItem("accessToken");
 			if (accessToken) {
@@ -48,15 +47,13 @@ export default function Page() {
 	// 2. Define a submit handler.
 	const onSubmit = async (values: z.infer<typeof loginSchema>) => {
 		const response = await login(values);
-		console.log(response);
 		if (response?.token) {
-			localStorage.setItem("accessToken", response?.token);
-
 			const token = response?.token;
 			const user = await getUser(token);
-      console.log(user.data);
-      setUser(user);
-      push("/");
+      const userData = user.data;
+			setUser(userData);
+			localStorage.setItem("user", JSON.stringify(userData));
+			push("/");
 		}
 	};
 

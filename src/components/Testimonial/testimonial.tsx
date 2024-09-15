@@ -1,4 +1,4 @@
-import Section from "@/components/Section";
+import Section from "@/components/shared/Section";
 import React from "react";
 import TestimonialCard from "./TestimonialCard";
 import Accord from "./accordion";

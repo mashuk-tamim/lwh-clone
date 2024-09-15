@@ -1,18 +1,14 @@
+"use client"
 import Image from "next/image";
 import React from "react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import {
 	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
 } from "@/components/ui/card";
 import { CourseCardProps } from "@/types/course-card";
 
-export default function CourseCard({ title, description, imgURL, isPaid }: CourseCardProps) {
-	return (
+export default function CourseCard({ id, title, description, imgURL, isPaid }: CourseCardProps) {
+  return (
 		<div className="max-w-[400px] md:max-w-[320px] lg:max-w-[400px]">
 			<Card>
 				<Image
@@ -33,7 +29,9 @@ export default function CourseCard({ title, description, imgURL, isPaid }: Cours
 					<p>{description}</p>
 					{isPaid ? (
 						<div className="pt-8">
-							<Button variant={"gradient"} className="">
+							<Button
+								variant={"gradient"}
+							>
 								বিস্তারিত দেখ
 							</Button>
 						</div>

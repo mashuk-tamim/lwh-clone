@@ -12,7 +12,6 @@ const axiosInstance = axios.create({
 });
 
 export const login = async ({ username, password }: LoginProps) => {
-	console.log(username, password);
 	try {
 		const response = await axiosInstance.post(
 			LOGIN_API,

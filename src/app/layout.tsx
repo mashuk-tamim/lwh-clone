@@ -3,8 +3,8 @@ import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Nav/navbar";
 import Footer from "../components/Footer/footer";
-import { AuthProvider } from "@/context/auth-context";
 import { ThemeProvider } from "@/context/theme-context";
+import { AuthProvider } from "@/context/auth-context";
 
 const siliguri = Hind_Siliguri({
 	subsets: ["bengali"],

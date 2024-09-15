@@ -1,11 +1,10 @@
 "use client";
-
 import { useAuth } from "@/context/auth-context";
 import Image from "next/image";
 import React from "react";
 
 export default function Profile() {
-	const { user } = useAuth();
+  const { user } = useAuth();
 	return (
 		<main className="w-screen h-[100vh] pt-20">
 			<div className="max-w-7xl mx-auto flex flex-col justify-start items-center">

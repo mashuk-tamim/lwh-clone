@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, UserRound } from "lucide-react";
 import {
@@ -13,13 +13,14 @@ import {
 	DropdownMenuSubTrigger,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import Link from 'next/link';
-import { ModeToggleButton } from './mode-toggle';
-import { useAuth } from '@/context/auth-context';
+import Link from "next/link";
+import { ModeToggleButton } from "../ui/mode-toggle";
+import { useAuth } from "@/context/auth-context";
 
 export default function MobileNavMenu() {
-  const { user, logout } = useAuth();
-  return (
+	const { user, logout } = useAuth();
+
+	return (
 		<div className="flex gap-2 md:hidden">
 			<ModeToggleButton />
 			<DropdownMenu>
@@ -73,10 +74,8 @@ export default function MobileNavMenu() {
 										<UserRound className="h-4 w-4" />
 										Profile
 									</Button>
-                </Link>
-                <Button onClick={logout}>
-                  Logout
-                </Button>
+								</Link>
+								<Button onClick={logout}>Logout</Button>
 							</div>
 						) : (
 							<Link href="/login">

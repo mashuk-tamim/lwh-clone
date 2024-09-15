@@ -1,5 +1,4 @@
 import React from "react";
-import rocket from "@/assets/svgs/rocket-svgrepo-com.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -11,6 +10,7 @@ import heroBanner from "@/assets/images/hemel.webp";
 import {
 	Card
 } from "@/components/ui/card";
+import { features } from "@/mock/our-features";
 
 export default function Hero() {
 	return (
@@ -95,21 +95,3 @@ export default function Hero() {
 	);
 }
 
-const features = [
-	{
-		title: "১০ লক্ষ+ 🤓",
-		subtitle: "ছাত্রছাত্রী শিখছে",
-	},
-	{
-		title: "১৭৫ হাজার 😇",
-		subtitle: "সাবস্ক্রাইব করেছে",
-	},
-	{
-		title: "৫৬০+ 🤯",
-		subtitle: "ফ্রি ক্লাস রয়েছে",
-	},
-	{
-		title: "৬৪ টি 🤩",
-		subtitle: "জেলা থেকে শিখছে",
-	},
-];

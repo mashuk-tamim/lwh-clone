@@ -1,7 +1,7 @@
-import Section from "@/components/Section";
-import CourseCard from "@/components/CourseCard";
-import chemistryFirst from "@/assets/images/course/chemistry-1st-paper.jpg"
-import physics from "@/assets/images/course/physics-cycle1.webp"
+import Section from "@/components/shared/Section";
+import CourseCard from "@/components/shared/CourseCard";
+import { paidCourses } from "@/mock/paid-courses";
+
 
 export default function PaidCourses() {
 	return (
@@ -10,9 +10,10 @@ export default function PaidCourses() {
 			title="আমাদের চলমান ও আপকামিং কোর্সসমূহ..."
 		>
 			<div className="flex flex-col md:flex-row justify-center gap-10">
-				{courses.map((course, idx) => (
+				{paidCourses.map((course) => (
 					<CourseCard
-						key={idx}
+						key={course.id}
+						id={course.id}
 						imgURL={course.imgURL}
 						title={course.title}
 						description={course.description}
@@ -24,18 +25,4 @@ export default function PaidCourses() {
 	);
 }
 
-const courses = [
-	{
-		imgURL: chemistryFirst,
-		title:
-			"Basic to Advanced Chemistry 1st & 2nd Paper Course (For 24 & 25 Batch)",
-		description: "এক কোর্সেই Academic এবং Admission এর Complete Solution",
-		isPaid: true,
-	},
-	{
-		imgURL: physics,
-		title: "Cyclewise Physics Course - Cycle 01",
-		description: "এক কোর্সেই Academic এবং Admission এর Complete Solution",
-		isPaid: true,
-	},
-];
+

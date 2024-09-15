@@ -1,14 +1,9 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-
-import logo from "@/assets/svgs/logo.svg"; 
-import { ModeToggleButton } from "./mode-toggle";
+import logo from "@/assets/svgs/logo.svg";
 import MobileNavMenu from "./mobile-nav-menu";
 import NavLinks from "./nav-links";
-import { useAuth } from "@/context/auth-context";
-
-
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -17,14 +12,14 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-import {
-  Button
-} from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import { UserRound } from "lucide-react";
+import { ModeToggleButton } from "../ui/mode-toggle";
+import { useAuth } from "@/context/auth-context";
 
 export default function Navbar() {
   const { user, logout } = useAuth();
+	
 	return (
 		<nav className="w-screen h-[50px] md:h-[60px] px-5 md:px-10 backdrop-blur-2xl fixed top-0 z-999 flex items-center">
 			<div className="w-full max-w-7xl mx-auto flex justify-between items-center">
@@ -61,7 +56,9 @@ export default function Navbar() {
 										<DropdownMenuItem>
 											<Link href="/profile">Profile</Link>
 										</DropdownMenuItem>
-										<DropdownMenuItem onClick={logout}>Log out</DropdownMenuItem>
+										<DropdownMenuItem onClick={logout}>
+											Log out
+										</DropdownMenuItem>
 									</DropdownMenuContent>
 								</DropdownMenu>
 							</div>
